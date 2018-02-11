@@ -1,0 +1,28 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void pascaltriangulo(int num);
+void main(){
+    int n;
+    printf("ingrese el total de numeros: \n");
+    scanf("%d", &n);
+    pascaltriangulo(n);
+}
+
+void pascaltriangulo(int num){
+    int i, j, k, espacio=0;
+    espacio = num;
+
+    for(i=0; i<= num; i++){
+        int valor = 1;
+        for(j=espacio-(i); j>0; j--){
+            printf(" ");
+        }
+        for(k=0; k<=i; k++){
+            printf(" ");
+            printf("%d",valor);
+            valor = valor*(i-k)/(k+1);
+        }
+        printf("\n");
+    }
+}
